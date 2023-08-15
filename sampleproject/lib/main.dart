@@ -46,9 +46,12 @@ class _RootPageState extends State<RootPage> {
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
           NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
         ],
-        onDestinationSelected: (int index){
-          currentPage = index;
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPage = index;
+          });
         },
+        selectedIndex: currentPage,
       ),
     );
   }
