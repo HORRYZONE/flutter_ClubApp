@@ -20,6 +20,11 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
       ),
+      body: Column(
+        children: [
+          Image.asset('images/bakugo.jpg')
+        ],
+      ),
     );
   }
 }
