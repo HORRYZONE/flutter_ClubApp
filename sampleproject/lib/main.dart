@@ -41,6 +41,15 @@ class _RootPageState extends State<RootPage> {
         },
         child: Icon(Icons.add),
       ),
+      bottomNavigationBar: NavigationBar(
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+          NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+        ],
+        onDestinationSelected: (int index){
+          currentPage = index;
+        },
+      ),
     );
   }
 }
