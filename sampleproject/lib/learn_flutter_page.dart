@@ -8,6 +8,7 @@ class LearnFlutterpage extends StatefulWidget {
 }
 
 class _LearnFlutterpageState extends State<LearnFlutterpage> {
+  bool isSwitch = false;  //must be before build so that it not loop overwrite
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +43,9 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
             ),
           ),
           ElevatedButton(
+            style:ElevatedButton.styleFrom(
+              primary: isSwitch ? Colors.green : Colors.blue,   //if isSwitch true (?), then color green. else(:) color blue
+            ) ,
               onPressed: () {
                 debugPrint('Elevated btn');
               },
@@ -79,7 +83,12 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
                 ),
               ],
             ),
-          )
+          ),
+          Switch(value: isSwitch, onChanged: (bool newBool){
+            setState(() {
+            isSwitch = newBool;
+            });
+          })
         ],
       ),
     );
