@@ -23,9 +23,19 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
       body: Column(
         children: [
           Image.asset('images/bakugo.jpg'),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           const Divider(
             color: Colors.black,
+          ),
+          Container(
+            color: Colors.blueGrey,
+            width: double.infinity,   //make it to full width
+            child: const Text(
+              "this is a text",
+              style: TextStyle(color: Colors.white),
+            ),
           )
         ],
       ),
