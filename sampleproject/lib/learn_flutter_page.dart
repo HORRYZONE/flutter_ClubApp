@@ -22,80 +22,83 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
       ),
-      body: Column(
-        children: [
-          Image.asset('images/bakugo.jpg'),
-          const SizedBox(
-            height: 10,
-          ),
-          const Divider(
-            color: Colors.black,
-          ),
-          Container(
-            margin: const EdgeInsets.all(10.0),
-            padding: const EdgeInsets.all(10.0),
-            color: Colors.blueGrey,
-            width: double.infinity, //make it to full width
-            child: const Center(
-              child: Text(
-                "this is a text",
-                style: TextStyle(color: Colors.white),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset('images/bakugo.jpg'),
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(
+              color: Colors.black,
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
+              color: Colors.blueGrey,
+              width: double.infinity, //make it to full width
+              child: const Center(
+                child: Text(
+                  "this is a text",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-          ),
-          ElevatedButton(
-            style:ElevatedButton.styleFrom(
-              primary: isSwitch ? Colors.green : Colors.blue,   //if isSwitch true (?), then color green. else(:) color blue
-            ) ,
-              onPressed: () {
-                debugPrint('Elevated btn');
-              },
-              child: Text('elevate btn')
-              ),
-          OutlinedButton(
-              onPressed: () {
-                debugPrint('Outline btn');
-              },
-              child: const Text('Outline btn')
-              ),
-          TextButton(
-              onPressed: () {
-                debugPrint('Text Button');
-              },
-              child: const Text('text button')
-              ),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,   //anywhere inside the row can trigger
-            onTap: (){
-              debugPrint('this is the row');
-            },
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,   //center it on x axis
-              children: [
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.blue,
+            ElevatedButton(
+              style:ElevatedButton.styleFrom(
+                primary: isSwitch ? Colors.green : Colors.blue,   //if isSwitch true (?), then color green. else(:) color blue
+              ) ,
+                onPressed: () {
+                  debugPrint('Elevated btn');
+                },
+                child: Text('elevate btn')
                 ),
-                Text('Row widget'),
-                Icon(
-                  Icons.local_fire_department,
-                   color: Colors.blue,
-          
+            OutlinedButton(
+                onPressed: () {
+                  debugPrint('Outline btn');
+                },
+                child: const Text('Outline btn')
                 ),
-              ],
+            TextButton(
+                onPressed: () {
+                  debugPrint('Text Button');
+                },
+                child: const Text('text button')
+                ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,   //anywhere inside the row can trigger
+              onTap: (){
+                debugPrint('this is the row');
+              },
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,   //center it on x axis
+                children: [
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.blue,
+                  ),
+                  Text('Row widget'),
+                  Icon(
+                    Icons.local_fire_department,
+                     color: Colors.blue,
+            
+                  ),
+                ],
+              ),
             ),
-          ),
-          Switch(value: isSwitch, onChanged: (bool newBool){
-            setState(() {
-            isSwitch = newBool;
-            });
-          }),
-          Checkbox(value: isCheckbox, onChanged: (bool? newBool){      //the newBool need to be nullable
-            setState(() {
-              isCheckbox = newBool;
-            });
-          }),   
-        ],
+            Switch(value: isSwitch, onChanged: (bool newBool){
+              setState(() {
+              isSwitch = newBool;
+              });
+            }),
+            Checkbox(value: isCheckbox, onChanged: (bool? newBool){      //the newBool need to be nullable
+              setState(() {
+                isCheckbox = newBool;
+              });
+            }),
+            Image.network('https://logos-world.net/wp-content/uploads/2023/03/Dead-Kennedys-Emblem.png')   
+          ],
+        ),
       ),
     );
   }
