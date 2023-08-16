@@ -33,13 +33,46 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
             margin: const EdgeInsets.all(10.0),
             padding: const EdgeInsets.all(10.0),
             color: Colors.blueGrey,
-            width: double.infinity,   //make it to full width
+            width: double.infinity, //make it to full width
             child: const Center(
-              child:  Text(
+              child: Text(
                 "this is a text",
                 style: TextStyle(color: Colors.white),
               ),
             ),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                debugPrint('Elevated btn');
+              },
+              child: Text('elevate btn')
+              ),
+          OutlinedButton(
+              onPressed: () {
+                debugPrint('Outline btn');
+              },
+              child: const Text('Outline btn')
+              ),
+          TextButton(
+              onPressed: () {
+                debugPrint('Text Button');
+              },
+              child: const Text('text button')
+              ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,   //center it on x axis
+            children: [
+              Icon(
+                Icons.local_fire_department,
+                color: Colors.blue,
+              ),
+              Text('Row widget'),
+              Icon(
+                Icons.local_fire_department,
+                 color: Colors.blue,
+
+              ),
+            ],
           )
         ],
       ),
