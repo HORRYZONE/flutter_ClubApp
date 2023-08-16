@@ -30,11 +30,15 @@ class _LearnFlutterpageState extends State<LearnFlutterpage> {
             color: Colors.black,
           ),
           Container(
+            margin: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             color: Colors.blueGrey,
             width: double.infinity,   //make it to full width
-            child: const Text(
-              "this is a text",
-              style: TextStyle(color: Colors.white),
+            child: const Center(
+              child:  Text(
+                "this is a text",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           )
         ],
